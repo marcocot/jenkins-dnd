@@ -4,13 +4,12 @@ on:
   push:
     branches:
       - master
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
+  schedule:
+    - cron: '* * * * */8'
 
   # Run tests for any PRs.
   pull_request:
+  repository_dispatch:
 
 env:
   IMAGE_NAME: jenkins-dnd
